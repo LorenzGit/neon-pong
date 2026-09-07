@@ -177,7 +177,8 @@ A few decisions worth knowing about:
   and explosion with `AVAudioEngine` at launch. There are no `.png` or `.wav`
   assets in `Sources/`.
 - **Text glow.** Display type uses a real `CIGaussianBlur`; body copy stacks
-  slightly enlarged additive copies. Forty simultaneous blur passes is more than
+  unscaled additive copies with a haze behind them. Scaling the copies displaces
+  glyphs and doubles the text. Forty simultaneous blur passes is more than
   SpriteKit will reliably render, and the ones that get dropped show up as
   labels that randomly lose their bloom. The stacked copies also carry an
   explicit `zPosition`, because the view runs with `ignoresSiblingOrder` and the

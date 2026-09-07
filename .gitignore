@@ -10,3 +10,17 @@ artifacts/art/
 
 # Your Apple developer team. Copy Configs/Signing.xcconfig.example and fill it in.
 Configs/Signing.xcconfig
+
+# Local secrets and Apple signing material.
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+*.p12
+*.pfx
+*.cer
+*.pem
+*.key
+*.mobileprovision
+*.provisionprofile
