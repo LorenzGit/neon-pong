@@ -1,0 +1,5 @@
+// Shared build settings. Machine-specific values live in Signing.xcconfig,
+// which is gitignored; the optional include below means a fresh clone builds
+// for the simulator with nothing else, and a device build only needs that one
+// file created from the .example next to it.
+#include? "Signing.xcconfig"

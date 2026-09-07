@@ -1,0 +1,3 @@
+// Copy to Signing.xcconfig (gitignored) and fill in your own team.
+//   Xcode ▸ Settings ▸ Accounts ▸ select the team ▸ the ID is in brackets
+DEVELOPMENT_TEAM = XXXXXXXXXX

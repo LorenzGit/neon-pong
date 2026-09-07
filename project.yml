@@ -1,0 +1,71 @@
+name: NeonPong
+options:
+  bundleIdPrefix: com.lorenzonuvoletta
+  deploymentTarget:
+    tvOS: "17.0"
+  createIntermediateGroups: true
+  generateEmptyDirectories: false
+
+configs:
+  Debug: debug
+  Release: release
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    CODE_SIGN_STYLE: Automatic
+    TARGETED_DEVICE_FAMILY: "3"
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    SWIFT_STRICT_CONCURRENCY: minimal
+  configs:
+    Debug:
+      SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
+      SWIFT_OPTIMIZATION_LEVEL: "-Onone"
+      GCC_PREPROCESSOR_DEFINITIONS: "DEBUG=1 $(inherited)"
+    Release:
+      SWIFT_ACTIVE_COMPILATION_CONDITIONS: ""
+      SWIFT_OPTIMIZATION_LEVEL: "-O"
+
+targets:
+  NeonPong:
+    type: application
+    platform: tvOS
+    configFiles:
+      Debug: Configs/Base.xcconfig
+      Release: Configs/Base.xcconfig
+    sources:
+      - path: Sources
+      - path: Resources
+        excludes:
+          - "Info.plist"
+    info:
+      path: Resources/Info.plist
+      properties:
+        CFBundleDisplayName: Neon Pong
+        CFBundleShortVersionString: "1.0"
+        CFBundleVersion: "1"
+        UIRequiredDeviceCapabilities: [arm64]
+        UIUserInterfaceStyle: Dark
+        GCSupportsControllerUserInteraction: true
+        GCSupportedGameControllers:
+          - ProfileName: ExtendedGamepad
+          - ProfileName: MicroGamepad
+        UIApplicationSupportsMultipleScenes: false
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.lorenzonuvoletta.neonpong
+        ASSETCATALOG_COMPILER_APPICON_NAME: "App Icon & Top Shelf Image"
+        ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME: LaunchImage
+        INFOPLIST_KEY_UIUserInterfaceStyle: Dark
+        CODE_SIGN_ENTITLEMENTS: ""
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+schemes:
+  NeonPong:
+    build:
+      targets:
+        NeonPong: all
+    run:
+      config: Debug
+    archive:
+      config: Release

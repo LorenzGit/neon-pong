@@ -1,0 +1,12 @@
+.DS_Store
+build/
+DerivedData/
+# Xcode per-user window and breakpoint state, nested at several depths.
+**/xcuserdata/
+
+# Intermediate art. Regenerate with:
+#   xcrun swift Tools/IconForge.swift artifacts/art && python3 Tools/build_assets.py
+artifacts/art/
+
+# Your Apple developer team. Copy Configs/Signing.xcconfig.example and fill it in.
+Configs/Signing.xcconfig
